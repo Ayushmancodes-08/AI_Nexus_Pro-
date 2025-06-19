@@ -1,0 +1,125 @@
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a8a8a8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Background animation elements */
+.bg-animate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 20%),
+              radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 20%);
+  z-index: -1;
+}
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+
+/* Feature cards animation */
+.feature-card {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 1;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Smooth transitions */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Mobile menu animations */
+.mobile-menu {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(100%);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-overlay {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-overlay.open {
+  opacity: 0.7;
+  pointer-events: all;
+}
+
+/* Animation for mobile */
+@media (max-width: 768px) {
+  .feature-card {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .feature-card:nth-child(n) {
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+  }
+}
+
+/* Hover effects */
+.feature-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile optimization for brand names */
+@media (max-width: 640px) {
+  .client-logo-container {
+    gap: 1rem;
+  }
+  
+  .client-logo-item {
+    width: 100px;
+    height: 60px;
+  }
+  
+  .client-logo-text {
+    font-size: 1rem;
+  }
+}
+
+html ,body{
+  overflow-x: hidden;
+  width: 100%;
+}
