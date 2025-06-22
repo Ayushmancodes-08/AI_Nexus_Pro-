@@ -1,6 +1,6 @@
 # AI Nexus Pro Landing Page
 
-![AI Nexus Pro Preview](https://via.placeholder.com/800x400?text=Landing+Page+Preview)
+
 
 A sleek, modern landing page for AI Nexus Pro - showcasing AI solutions with smooth animations and responsive design.
 
