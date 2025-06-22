@@ -1,1407 +1,1421 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Nexus Pro - Next Generation AI Solutions</title>
-  <meta
-    name="description"
-    content="Revolutionary AI solutions for your business. Automate, optimize, and scale with AI Nexus Pro."
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nexus Pro - Next Generation AI Solutions</title>
+    <meta
+      name="description"
+      content="Revolutionary AI solutions for your business. Automate, optimize, and scale with AI Nexus Pro."
+    />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            heading: ['Space Grotesk', 'system-ui', 'sans-serif']
-          },
-          animation: {
-            float: 'float 6s ease-in-out infinite',
-            floatReverse: 'floatReverse 6s ease-in-out infinite',
-            fadeIn: 'fadeIn 0.6s ease-out forwards',
-            pulseCustom: 'pulseCustom 2s infinite'
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0) rotate(6deg)' },
-              '50%': { transform: 'translateY(-20px) rotate(6deg)' }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              heading: ["Space Grotesk", "system-ui", "sans-serif"],
             },
-            floatReverse: {
-              '0%, 100%': { transform: 'translateY(0) rotate(-6deg)' },
-              '50%': { transform: 'translateY(-20px) rotate(-6deg)' }
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              floatReverse: "floatReverse 6s ease-in-out infinite",
+              fadeIn: "fadeIn 0.6s ease-out forwards",
+              pulseCustom: "pulseCustom 2s infinite",
             },
-            fadeIn: {
-              from: { opacity: 0, transform: 'translateY(20px)' },
-              to: { opacity: 1, transform: 'translateY(0)' }
-            },
-            pulseCustom: {
-              '0%, 100%': { 
-                transform: 'scale(1)', 
-                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' 
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0) rotate(6deg)" },
+                "50%": { transform: "translateY(-20px) rotate(6deg)" },
               },
-              '50%': { 
-                transform: 'scale(1.03)', 
-                boxShadow: '0 20px 25px -5px rgba(79, 70, 229, 0.2), 0 10px 10px -5px rgba(79, 70, 229, 0.1)' 
-              }
-            }
-          }
-        }
-      }
-    }
-  </script>
+              floatReverse: {
+                "0%, 100%": { transform: "translateY(0) rotate(-6deg)" },
+                "50%": { transform: "translateY(-20px) rotate(-6deg)" },
+              },
+              fadeIn: {
+                from: { opacity: 0, transform: "translateY(20px)" },
+                to: { opacity: 1, transform: "translateY(0)" },
+              },
+              pulseCustom: {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                  boxShadow:
+                    "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                },
+                "50%": {
+                  transform: "scale(1.03)",
+                  boxShadow:
+                    "0 20px 25px -5px rgba(79, 70, 229, 0.2), 0 10px 10px -5px rgba(79, 70, 229, 0.1)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-    
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-white text-gray-800 font-sans antialiased">
-  <!-- Background animation elements -->
-  <div class="bg-animate"></div>
-  <div class="gradient-overlay"></div>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- Mobile menu overlay -->
-  <div id="mobile-overlay" class="mobile-overlay fixed inset-0 bg-black z-40"></div>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Main content container -->
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Navigation -->
-    <nav class="py-6 flex items-center justify-between">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <div
-          class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl transition-all duration-300 hover:rotate-12"
-        >
-          AN
-        </div>
-        <span
-          class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-          >AI Nexus Pro</span
-        >
-      </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-white text-gray-800 font-sans antialiased">
+    <!-- Background animation elements -->
+    <div class="bg-animate"></div>
+    <div class="gradient-overlay"></div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a
-          href="#features"
-          class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
-          >Features</a
-        >
-        <a
-          href="#testimonials"
-          class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
-          >Testimonials</a
-        >
-        <a
-          href="#pricing"
-          class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
-          >Pricing</a
-        >
-        <a
-          href="#contact"
-          class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
-          >Contact</a
-        >
-        <a
-          href="#"
-          class="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-          >Get Started</a
-        >
-      </div>
-
-      <!-- Mobile menu button -->
-      <div class="md:hidden flex items-center space-x-4">
-        <button
-          id="mobile-menu-button"
-          class="p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none transition-colors duration-300"
-        >
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile menu -->
+    <!-- Mobile menu overlay -->
     <div
-      id="mobile-menu"
-      class="mobile-menu fixed inset-y-0 right-0 z-50 bg-white w-3/4 md:w-1/2 max-w-sm shadow-xl"
-    >
-      <div class="p-6 flex flex-col justify-between h-full">
-        <div>
-          <div class="flex items-center justify-between mb-8">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl"
-              >
-                AN
-              </div>
-              <span
-                class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-                >AI Nexus Pro</span
-              >
-            </div>
-            <button id="mobile-menu-close" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
-              <i class="fas fa-times text-2xl"></i>
-            </button>
+      id="mobile-overlay"
+      class="mobile-overlay fixed inset-0 bg-black z-40"
+    ></div>
+
+    <!-- Main content container -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Navigation -->
+      <nav class="py-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl transition-all duration-300 hover:rotate-12"
+          >
+            AN
           </div>
-          <nav class="flex flex-col space-y-6">
-            <a
-              href="#features"
-              class="text-xl font-medium hover:text-indigo-600 transition-colors"
-              >Features</a
-            >
-            <a
-              href="#testimonials"
-              class="text-xl font-medium hover:text-indigo-600 transition-colors"
-              >Testimonials</a
-            >
-            <a
-              href="#pricing"
-              class="text-xl font-medium hover:text-indigo-600 transition-colors"
-              >Pricing</a
-            >
-            <a
-              href="#contact"
-              class="text-xl font-medium hover:text-indigo-600 transition-colors"
-              >Contact</a
-            >
-          </nav>
-        </div>
-        <a
-          href="#"
-          class="block w-full text-center px-6 py-3 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md hover:shadow-lg"
-          >Get Started</a
-        >
-      </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="py-20 md:py-32">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center">
-          <!-- Left Column -->
-          <div class="md:w-1/2 mb-12 md:mb-0">
-            <h1
-              class="text-4xl md:text-6xl font-heading font-bold leading-tight mb-6"
-            >
-              <span
-                class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-                >Revolutionize</span
-              >
-              Your Business with AI
-            </h1>
-            <p class="text-xl text-gray-600 mb-8 max-w-lg">
-              AI Nexus Pro delivers cutting-edge artificial intelligence
-              solutions to automate, optimize, and scale your business
-              operations like never before.
-            </p>
-            <div
-              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
-            >
-              <a
-                href="#pricing"
-                class="px-8 py-4 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl animate-pulseCustom text-center transform hover:scale-105 transition duration-300"
-              >
-                Get Started Free
-              </a>
-              <a
-                href="#features"
-                class="px-8 py-4 rounded-lg bg-white border-2 border-indigo-500 text-indigo-600 font-bold text-lg hover:bg-indigo-50 transition-all shadow-lg hover:shadow-xl text-center transform hover:scale-105 transition duration-300"
-              >
-                Explore Features
-              </a>
-            </div>
-            <div class="mt-8 flex items-center space-x-4">
-              <div class="flex -space-x-2">
-                <img
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-                  alt="User"
-                  title="User 1"
-                />
-                <img
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200"
-                  alt="User"
-                  title="User 2"
-                />
-                <img
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
-                  alt="User"
-                  title="User 3"
-                />
-              </div>
-              <div>
-                <div class="flex items-center">
-                  <i class="fas fa-star text-yellow-400 mr-1"></i>
-                  <span class="font-bold">4.9</span>
-                  <span class="text-gray-500 ml-1">(2.4k reviews)</span>
-                </div>
-                <p class="text-sm text-gray-500">
-                  Trusted by 5,000+ businesses
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="md:w-1/2 relative">
-            <div class="relative max-w-md mx-auto">
-              <!-- Floating card 1 -->
-              <div
-                class="absolute -top-10 -left-10 w-64 h-64 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-xl transform rotate-6 z-10 animation-float hover:shadow-2xl transition duration-300"
-              >
-                <div class="p-6">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-indigo-500 flex items-center justify-center text-white mb-4"
-                  >
-                    <i class="fas fa-chart-line text-xl"></i>
-                  </div>
-                  <h3 class="font-bold text-lg mb-2">Real-time Analytics</h3>
-                  <p class="text-gray-600 text-sm">
-                    Get instant insights into your business performance.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Floating card 2 -->
-              <div
-                class="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl shadow-xl transform -rotate-6 z-10 animation-float hover:shadow-2xl transition duration-300"
-              >
-                <div class="p-6">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-pink-500 flex items-center justify-center text-white mb-4"
-                  >
-                    <i class="fas fa-robot text-xl"></i>
-                  </div>
-                  <h3 class="font-bold text-lg mb-2">AI Automation</h3>
-                  <p class="text-gray-600 text-sm">
-                    Automate repetitive tasks with our smart AI.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Main dashboard image -->
-              <div
-                class="relative w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl shadow-2xl overflow-hidden z-20"
-              >
-                <div class="w-full h-full flex items-center justify-center bg-white">
-                  <div class="text-center p-4">
-                    <div class="flex justify-center mb-4">
-                      <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
-                      </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
-                    <p class="text-gray-500">Real-time insights and predictions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section
-      id="features"
-      class="py-20 bg-gradient-to-b from-white to-gray-50"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
           <span
-            class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
+            class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+            >AI Nexus Pro</span
           >
-            Powerful Features
-          </span>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-            AI Solutions
-            <span
-              class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-              >Tailored</span
-            >
-            for You
-          </h2>
-          <p
-            class="max-w-2xl mx-auto text-lg text-gray-600"
-          >
-            Our platform offers a comprehensive suite of AI tools designed to
-            solve your most challenging business problems.
-          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Feature 1 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#features"
+            class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
+            >Features</a
           >
-            <div
-              class="w-16 h-16 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6"
-            >
-              <i class="fas fa-brain text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Predictive Analytics</h3>
-            <p class="text-gray-600 mb-4">
-              Leverage our advanced machine learning models to forecast trends
-              and make data-driven decisions.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-            <div
-              class="mt-4 pt-4 border-t border-gray-100"
-            >
-              <span
-                class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-medium"
-              >
-                New
-              </span>
-            </div>
-          </div>
-
-          <!-- Feature 2 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+          <a
+            href="#testimonials"
+            class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
+            >Testimonials</a
           >
-            <div
-              class="w-16 h-16 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600 mb-6"
-            >
-              <i class="fas fa-robot text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Process Automation</h3>
-            <p class="text-gray-600 mb-4">
-              Automate repetitive tasks and workflows with our intelligent RPA
-              solutions powered by AI.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-pink-600 font-medium hover:text-pink-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Feature 3 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-16 h-16 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6"
-            >
-              <i class="fas fa-comments text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">
-              Natural Language Processing
-            </h3>
-            <p class="text-gray-600 mb-4">
-              Understand and generate human-like text with our
-              state-of-the-art NLP models.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-purple-600 font-medium hover:text-purple-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Feature 4 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6"
-            >
-              <i class="fas fa-eye text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Computer Vision</h3>
-            <p class="text-gray-600 mb-4">
-              Extract insights from images and videos with our advanced
-              computer vision capabilities.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Feature 5 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-6"
-            >
-              <i class="fas fa-shield-alt text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Fraud Detection</h3>
-            <p class="text-gray-600 mb-4">
-              Identify and prevent fraudulent activities with our anomaly
-              detection algorithms.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-green-600 font-medium hover:text-green-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-
-          <!-- Feature 6 -->
-          <div
-            class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-          >
-            <div
-              class="w-16 h-16 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 mb-6"
-            >
-              <i class="fas fa-cogs text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Custom Solutions</h3>
-            <p class="text-gray-600 mb-4">
-              Need something specific? Our team will build custom AI models
-              tailored to your exact requirements.
-            </p>
-            <a
-              href="#"
-              class="inline-flex items-center text-amber-600 font-medium hover:text-amber-800 transition-colors"
-            >
-              Learn more <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-            <div
-              class="mt-4 pt-4 border-t border-gray-100"
-            >
-              <span
-                class="inline-block px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-sm font-medium"
-              >
-                Popular
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-16 text-center">
           <a
             href="#pricing"
-            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-lg rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+            class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
+            >Pricing</a
           >
-            See Pricing Plans
-            <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <span
-            class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
+          <a
+            href="#contact"
+            class="font-medium hover:text-indigo-600 transition-colors duration-300 hover:scale-105"
+            >Contact</a
           >
-            Client Stories
-          </span>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Trusted by
-            <span
-              class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-              >Industry Leaders</span
-            >
-          </h2>
-          <p
-            class="max-w-2xl mx-auto text-lg text-gray-600"
+          <a
+            href="#"
+            class="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+            >Get Started</a
           >
-            Don't just take our word for it. Here's what our clients say about
-            our AI solutions.
-          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <!-- Testimonial 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div class="flex items-center mb-6">
-              <div class="flex-shrink-0 mr-4">
-                <img
-                  class="w-16 h-16 rounded-full"
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200"
-                  alt="Sarah Johnson"
-                />
-              </div>
-              <div>
-                <h4 class="text-lg font-bold">Sarah Johnson</h4>
-                <p class="text-gray-500">CTO, TechNova</p>
-                <div class="flex mt-1">
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button
+            id="mobile-menu-button"
+            class="p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none transition-colors duration-300"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu fixed inset-y-0 right-0 z-50 bg-white w-3/4 md:w-1/2 max-w-sm shadow-xl"
+      >
+        <div class="p-6 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <!-- Logo -->
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl"
+                >
+                  AN
                 </div>
-              </div>
-            </div>
-            <blockquote
-              class="text-lg italic text-gray-600 mb-6"
-            >
-              "AI Nexus Pro transformed our customer service operations. Their natural language processing reduced our response times by 70% while maintaining exceptional quality."
-            </blockquote>
-            <div class="flex items-center">
-              <div
-                class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
-              >
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>Increased customer satisfaction by 45%</p>
-                <p>Reduced operational costs by 30%</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div class="flex items-center mb-6">
-              <div class="flex-shrink-0 mr-4">
-                <img
-                  class="w-16 h-16 rounded-full"
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200"
-                  alt="Michael Chen"
-                />
-              </div>
-              <div>
-                <h4 class="text-lg font-bold">Michael Chen</h4>
-                <p class="text-gray-500">CEO, Finova</p>
-                <div class="flex mt-1">
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                </div>
-              </div>
-            </div>
-            <blockquote
-              class="text-lg italic text-gray-600 mb-6"
-            >
-              "The fraud detection system from AI Nexus Pro has saved us millions. Their AI identified patterns we didn't even know existed."
-            </blockquote>
-            <div class="flex items-center">
-              <div
-                class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
-              >
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>Reduced fraud losses by 82%</p>
-                <p>Improved detection accuracy by 65%</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div class="flex items-center mb-6">
-              <div class="flex-shrink-0 mr-4">
-                <img
-                  class="w-16 h-16 rounded-full"
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200"
-                  alt="Emma Rodriguez"
-                />
-              </div>
-              <div>
-                <h4 class="text-lg font-bold">Emma Rodriguez</h4>
-                <p class="text-gray-500">Director of Operations, RetailChain</p>
-                <div class="flex mt-1">
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star text-yellow-400"></i>
-                  <i class="fas fa-star-half-alt text-yellow-400"></i>
-                </div>
-              </div>
-            </div>
-            <blockquote
-              class="text-lg italic text-gray-600 mb-6"
-            >
-              "AI Nexus Pro's predictive inventory system has revolutionized our supply chain, reducing overstock by 40% while eliminating stockouts."
-            </blockquote>
-            <div class="flex items-center">
-              <div
-                class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
-              >
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>Reduced inventory costs by 35%</p>
-                <p>Improved stock availability to 98.7%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Client Logos -->
-        <div class="mt-16">
-          <h3
-            class="text-center text-lg font-medium text-gray-500 mb-8"
-          >
-            Trusted by innovative companies worldwide
-          </h3>
-          <div
-            class="flex flex-wrap justify-center items-center gap-4 md:gap-8"
-          >
-            <div class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
-              <span class="text-lg md:text-xl font-bold text-gray-700">TechNova</span>
-            </div>
-            <div class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
-              <span class="text-lg md:text-xl font-bold text-gray-700">Finova</span>
-            </div>
-            <div class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
-              <span class="text-lg md:text-xl font-bold text-gray-700">RetailChain</span>
-            </div>
-            <div class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
-              <span class="text-lg md:text-xl font-bold text-gray-700">GlobalLogix</span>
-            </div>
-            <div class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
-              <span class="text-lg md:text-xl font-bold text-gray-700">DataCore</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section
-      id="pricing"
-      class="py-20 bg-gradient-to-b from-gray-50 to-white"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <span
-            class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
-          >
-            Simple Pricing
-          </span>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Choose Your
-            <span
-              class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-              >Perfect Plan</span
-            >
-          </h2>
-          <p
-            class="max-w-2xl mx-auto text-lg text-gray-600"
-          >
-            Flexible pricing designed to scale with your business. Start small
-            and upgrade as you grow.
-          </p>
-
-          <!-- Toggle between monthly and annual billing -->
-          <div class="flex items-center justify-center mt-8">
-            <span class="mr-4 font-medium">Monthly</span>
-            <label class="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                id="billing-toggle"
-                class="sr-only peer"
-                checked
-              />
-              <div
-                class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-indigo-600"
-              ></div>
-              <span class="ml-4 font-medium"
-                >Annual
                 <span
-                  class="text-sm bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full"
-                  >Save 20%</span
-                ></span
-              >
-            </label>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <!-- Starter Plan -->
-          <div
-            class="relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1"
-          >
-            <div class="p-8">
-              <h3 class="text-2xl font-bold mb-2">Starter</h3>
-              <p class="text-gray-600 mb-6">
-                Perfect for small businesses getting started with AI
-              </p>
-
-              <div class="mb-6">
-                <span class="text-4xl font-bold" id="starter-price">$99</span>
-                <span class="text-gray-500">/month</span>
+                  class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+                  >AI Nexus Pro</span
+                >
               </div>
-
+              <button
+                id="mobile-menu-close"
+                class="text-gray-700 hover:text-indigo-600 focus:outline-none"
+              >
+                <i class="fas fa-times text-2xl"></i>
+              </button>
+            </div>
+            <nav class="flex flex-col space-y-6">
               <a
-                href="#"
-                class="block w-full px-6 py-3 text-center bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 transition-colors mb-8 transform hover:scale-105 transition duration-300"
+                href="#features"
+                class="text-xl font-medium hover:text-indigo-600 transition-colors"
+                >Features</a
               >
-                Get Started
-              </a>
-
-              <ul class="space-y-3">
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Up to 10,000 AI requests/month</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Basic analytics dashboard</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Email support</span>
-                </li>
-                <li
-                  class="flex items-center text-gray-400"
-                >
-                  <i class="fas fa-times-circle mr-3"></i>
-                  <span>No priority support</span>
-                </li>
-                <li
-                  class="flex items-center text-gray-400"
-                >
-                  <i class="fas fa-times-circle mr-3"></i>
-                  <span>No custom models</span>
-                </li>
-              </ul>
-            </div>
-
-            <div
-              class="absolute top-0 right-0 bg-indigo-100 text-indigo-600 px-4 py-1 text-sm font-medium rounded-bl-lg"
-            >
-              Popular
-            </div>
-          </div>
-
-          <!-- Professional Plan -->
-          <div
-            class="relative bg-white rounded-xl shadow-xl overflow-hidden border-2 border-indigo-500 transform scale-105 z-10 transition-all hover:shadow-2xl hover:-translate-y-1"
-          >
-            <div class="p-8">
-              <h3 class="text-2xl font-bold mb-2">Professional</h3>
-              <p class="text-gray-600 mb-6">
-                For growing businesses needing advanced AI capabilities
-              </p>
-
-              <div class="mb-6">
-                <span class="text-4xl font-bold" id="professional-price"
-                  >$299</span
-                >
-                <span class="text-gray-500">/month</span>
-              </div>
-
               <a
-                href="#"
-                class="block w-full px-6 py-3 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md hover:shadow-lg mb-8 transform hover:scale-105 transition duration-300"
+                href="#testimonials"
+                class="text-xl font-medium hover:text-indigo-600 transition-colors"
+                >Testimonials</a
               >
-                Get Started
-              </a>
-
-              <ul class="space-y-3">
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Up to 50,000 AI requests/month</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Advanced analytics dashboard</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Priority email & chat support</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Basic custom model support</span>
-                </li>
-                <li
-                  class="flex items-center text-gray-400"
-                >
-                  <i class="fas fa-times-circle mr-3"></i>
-                  <span>No dedicated account manager</span>
-                </li>
-              </ul>
-            </div>
-
-            <div
-              class="absolute top-0 right-0 bg-indigo-500 text-white px-4 py-1 text-sm font-medium rounded-bl-lg"
-            >
-              Best Value
-            </div>
-          </div>
-
-          <!-- Enterprise Plan -->
-          <div
-            class="relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1"
-          >
-            <div class="p-8">
-              <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-              <p class="text-gray-600 mb-6">
-                For large organizations with custom AI needs
-              </p>
-
-              <div class="mb-6">
-                <span class="text-4xl font-bold" id="enterprise-price"
-                  >Custom</span
-                >
-              </div>
-
+              <a
+                href="#pricing"
+                class="text-xl font-medium hover:text-indigo-600 transition-colors"
+                >Pricing</a
+              >
               <a
                 href="#contact"
-                class="block w-full px-6 py-3 text-center bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 transition-colors mb-8 transform hover:scale-105 transition duration-300"
+                class="text-xl font-medium hover:text-indigo-600 transition-colors"
+                >Contact</a
               >
-                Contact Sales
-              </a>
-
-              <ul class="space-y-3">
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Unlimited AI requests</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Enterprise-grade analytics</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>24/7 priority support</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Fully custom AI models</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                  <span>Dedicated account manager</span>
-                </li>
-              </ul>
-            </div>
+            </nav>
           </div>
-        </div>
-
-        <div
-          class="mt-12 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto"
-        >
-          <h3 class="text-xl font-bold mb-4 text-center">
-            Frequently Asked Questions
-          </h3>
-
-          <div class="space-y-4">
-            <!-- FAQ Item 1 -->
-            <div class="border-b border-gray-200 pb-4">
-              <button
-                class="faq-toggle flex items-center justify-between w-full text-left font-medium"
-              >
-                <span>What counts as an "AI request"?</span>
-                <i
-                  class="fas fa-chevron-down transition-transform duration-200"
-                ></i>
-              </button>
-              <div
-                class="faq-content hidden mt-2 text-gray-600"
-              >
-                An AI request is any single interaction with our AI models.
-                This includes API calls, predictions, analyses, or any other
-                processing request. For example, analyzing a document counts
-                as one request, generating a response to a customer query
-                counts as one request, and processing an image for object
-                detection counts as one request.
-              </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="border-b border-gray-200 pb-4">
-              <button
-                class="faq-toggle flex items-center justify-between w-full text-left font-medium"
-              >
-                <span>Can I switch plans later?</span>
-                <i
-                  class="fas fa-chevron-down transition-transform duration-200"
-                ></i>
-              </button>
-              <div
-                class="faq-content hidden mt-2 text-gray-600"
-              >
-                Yes, you can upgrade or downgrade your plan at any time. When
-                upgrading, you'll immediately gain access to the higher plan's
-                features and your billing will be prorated. When downgrading,
-                the changes will take effect at the end of your current
-                billing cycle.
-              </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="border-b border-gray-200 pb-4">
-              <button
-                class="faq-toggle flex items-center justify-between w-full text-left font-medium"
-              >
-                <span>Is there a free trial available?</span>
-                <i
-                  class="fas fa-chevron-down transition-transform duration-200"
-                ></i>
-              </button>
-              <div
-                class="faq-content hidden mt-2 text-gray-600"
-              >
-                Yes! We offer a 14-day free trial of our Professional plan
-                with no credit card required. You'll get full access to all
-                Professional features during your trial period. After 14 days,
-                you can choose to continue with any of our paid plans.
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 text-center">
-            <p class="text-gray-600">
-              Still have questions?
-              <a
-                href="#contact"
-                class="text-indigo-600 hover:underline"
-                >Contact our team</a
-              >
-            </p>
-          </div>
+          <a
+            href="#"
+            class="block w-full text-center px-6 py-3 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md hover:shadow-lg"
+            >Get Started</a
+          >
         </div>
       </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
+      <!-- Hero Section -->
+      <section class="py-20 md:py-32">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- Left Column -->
+            <div class="md:w-1/2 mb-12 md:mb-0">
+              <h1
+                class="text-4xl md:text-6xl font-heading font-bold leading-tight mb-6"
+              >
+                <span
+                  class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+                  >Revolutionize</span
+                >
+                Your Business with AI
+              </h1>
+              <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                AI Nexus Pro delivers cutting-edge artificial intelligence
+                solutions to automate, optimize, and scale your business
+                operations like never before.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+              >
+                <a
+                  href="#pricing"
+                  class="px-8 py-4 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl animate-pulseCustom text-center transform hover:scale-105 transition duration-300"
+                >
+                  Get Started Free
+                </a>
+                <a
+                  href="#features"
+                  class="px-8 py-4 rounded-lg bg-white border-2 border-indigo-500 text-indigo-600 font-bold text-lg hover:bg-indigo-50 transition-all shadow-lg hover:shadow-xl text-center transform hover:scale-105 transition duration-300"
+                >
+                  Explore Features
+                </a>
+              </div>
+              <div class="mt-8 flex items-center space-x-4">
+                <div class="flex -space-x-2">
+                  <img
+                    class="w-10 h-10 rounded-full border-2 border-white"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+                    alt="User"
+                    title="User 1"
+                  />
+                  <img
+                    class="w-10 h-10 rounded-full border-2 border-white"
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200"
+                    alt="User"
+                    title="User 2"
+                  />
+                  <img
+                    class="w-10 h-10 rounded-full border-2 border-white"
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
+                    alt="User"
+                    title="User 3"
+                  />
+                </div>
+                <div>
+                  <div class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                    <span class="font-bold">4.9</span>
+                    <span class="text-gray-500 ml-1">(2.4k reviews)</span>
+                  </div>
+                  <p class="text-sm text-gray-500">
+                    Trusted by 5,000+ businesses
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="md:w-1/2 relative">
+              <div class="relative max-w-md mx-auto">
+                <!-- Floating card 1 -->
+                <div
+                  class="absolute -top-10 -left-10 w-64 h-64 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-xl transform rotate-6 z-10 animation-float hover:shadow-2xl transition duration-300"
+                >
+                  <div class="p-6">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-indigo-500 flex items-center justify-center text-white mb-4"
+                    >
+                      <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Real-time Analytics</h3>
+                    <p class="text-gray-600 text-sm">
+                      Get instant insights into your business performance.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Floating card 2 -->
+                <div
+                  class="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl shadow-xl transform -rotate-6 z-10 animation-float hover:shadow-2xl transition duration-300"
+                >
+                  <div class="p-6">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-pink-500 flex items-center justify-center text-white mb-4"
+                    >
+                      <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">AI Automation</h3>
+                    <p class="text-gray-600 text-sm">
+                      Automate repetitive tasks with our smart AI.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Main dashboard image -->
+                <div
+                  class="relative w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl shadow-2xl overflow-hidden z-20"
+                >
+                  <div
+                    class="w-full h-full flex items-center justify-center bg-white"
+                  >
+                    <div class="text-center p-4">
+                      <div class="flex justify-center mb-4">
+                        <div
+                          class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center"
+                        >
+                          <i
+                            class="fas fa-chart-line text-indigo-600 text-2xl"
+                          ></i>
+                        </div>
+                      </div>
+                      <h3 class="text-xl font-bold mb-2">
+                        AI Analytics Dashboard
+                      </h3>
+                      <p class="text-gray-500">
+                        Real-time insights and predictions
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section
+        id="features"
+        class="py-20 bg-gradient-to-b from-white to-gray-50"
+      >
+        <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <span
               class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
             >
-              Get In Touch
+              Powerful Features
             </span>
             <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Ready to
+              AI Solutions
               <span
                 class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
-                >Transform</span
+                >Tailored</span
               >
-              Your Business?
+              for You
             </h2>
-            <p
-              class="max-w-2xl mx-auto text-lg text-gray-600"
-            >
-              Our team is here to answer your questions and help you get
-              started with AI Nexus Pro.
+            <p class="max-w-2xl mx-auto text-lg text-gray-600">
+              Our platform offers a comprehensive suite of AI tools designed to
+              solve your most challenging business problems.
             </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6"
+              >
+                <i class="fas fa-brain text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Predictive Analytics</h3>
+              <p class="text-gray-600 mb-4">
+                Leverage our advanced machine learning models to forecast trends
+                and make data-driven decisions.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <span
+                  class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-medium"
+                >
+                  New
+                </span>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600 mb-6"
+              >
+                <i class="fas fa-robot text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Process Automation</h3>
+              <p class="text-gray-600 mb-4">
+                Automate repetitive tasks and workflows with our intelligent RPA
+                solutions powered by AI.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-pink-600 font-medium hover:text-pink-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6"
+              >
+                <i class="fas fa-comments text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">
+                Natural Language Processing
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Understand and generate human-like text with our
+                state-of-the-art NLP models.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-purple-600 font-medium hover:text-purple-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6"
+              >
+                <i class="fas fa-eye text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Computer Vision</h3>
+              <p class="text-gray-600 mb-4">
+                Extract insights from images and videos with our advanced
+                computer vision capabilities.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Feature 5 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-6"
+              >
+                <i class="fas fa-shield-alt text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Fraud Detection</h3>
+              <p class="text-gray-600 mb-4">
+                Identify and prevent fraudulent activities with our anomaly
+                detection algorithms.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-green-600 font-medium hover:text-green-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Feature 6 -->
+            <div
+              class="feature-card bg-white rounded-xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 mb-6"
+              >
+                <i class="fas fa-cogs text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Custom Solutions</h3>
+              <p class="text-gray-600 mb-4">
+                Need something specific? Our team will build custom AI models
+                tailored to your exact requirements.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-amber-600 font-medium hover:text-amber-800 transition-colors"
+              >
+                Learn more <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <span
+                  class="inline-block px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-sm font-medium"
+                >
+                  Popular
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-16 text-center">
+            <a
+              href="#pricing"
+              class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-lg rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+            >
+              See Pricing Plans
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
+            >
+              Client Stories
+            </span>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Trusted by
+              <span
+                class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+                >Industry Leaders</span
+              >
+            </h2>
+            <p class="max-w-2xl mx-auto text-lg text-gray-600">
+              Don't just take our word for it. Here's what our clients say about
+              our AI solutions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Testimonial 1 -->
+            <div
+              class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="flex items-center mb-6">
+                <div class="flex-shrink-0 mr-4">
+                  <img
+                    class="w-16 h-16 rounded-full"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200"
+                    alt="Sarah Johnson"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Sarah Johnson</h4>
+                  <p class="text-gray-500">CTO, TechNova</p>
+                  <div class="flex mt-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <blockquote class="text-lg italic text-gray-600 mb-6">
+                "AI Nexus Pro transformed our customer service operations. Their
+                natural language processing reduced our response times by 70%
+                while maintaining exceptional quality."
+              </blockquote>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
+                >
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="text-sm text-gray-500">
+                  <p>Increased customer satisfaction by 45%</p>
+                  <p>Reduced operational costs by 30%</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div
+              class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="flex items-center mb-6">
+                <div class="flex-shrink-0 mr-4">
+                  <img
+                    class="w-16 h-16 rounded-full"
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200"
+                    alt="Michael Chen"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Michael Chen</h4>
+                  <p class="text-gray-500">CEO, Finova</p>
+                  <div class="flex mt-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <blockquote class="text-lg italic text-gray-600 mb-6">
+                "The fraud detection system from AI Nexus Pro has saved us
+                millions. Their AI identified patterns we didn't even know
+                existed."
+              </blockquote>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
+                >
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="text-sm text-gray-500">
+                  <p>Reduced fraud losses by 82%</p>
+                  <p>Improved detection accuracy by 65%</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div
+              class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="flex items-center mb-6">
+                <div class="flex-shrink-0 mr-4">
+                  <img
+                    class="w-16 h-16 rounded-full"
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200"
+                    alt="Emma Rodriguez"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Emma Rodriguez</h4>
+                  <p class="text-gray-500">
+                    Director of Operations, RetailChain
+                  </p>
+                  <div class="flex mt-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                  </div>
+                </div>
+              </div>
+              <blockquote class="text-lg italic text-gray-600 mb-6">
+                "AI Nexus Pro's predictive inventory system has revolutionized
+                our supply chain, reducing overstock by 40% while eliminating
+                stockouts."
+              </blockquote>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4"
+                >
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="text-sm text-gray-500">
+                  <p>Reduced inventory costs by 35%</p>
+                  <p>Improved stock availability to 98.7%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Logos -->
+          <div class="mt-16">
+            <h3 class="text-center text-lg font-medium text-gray-500 mb-8">
+              Trusted by innovative companies worldwide
+            </h3>
+            <div
+              class="flex flex-wrap justify-center items-center gap-4 md:gap-8"
+            >
+              <div
+                class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center"
+              >
+                <span class="text-lg md:text-xl font-bold text-gray-700"
+                  >TechNova</span
+                >
+              </div>
+              <div
+                class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center"
+              >
+                <span class="text-lg md:text-xl font-bold text-gray-700"
+                  >Finova</span
+                >
+              </div>
+              <div
+                class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center"
+              >
+                <span class="text-lg md:text-xl font-bold text-gray-700"
+                  >RetailChain</span
+                >
+              </div>
+              <div
+                class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center"
+              >
+                <span class="text-lg md:text-xl font-bold text-gray-700"
+                  >GlobalLogix</span
+                >
+              </div>
+              <div
+                class="w-20 h-14 md:w-24 md:h-16 flex items-center justify-center"
+              >
+                <span class="text-lg md:text-xl font-bold text-gray-700"
+                  >DataCore</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section
+        id="pricing"
+        class="py-20 bg-gradient-to-b from-gray-50 to-white"
+      >
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
+            >
+              Simple Pricing
+            </span>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Choose Your
+              <span
+                class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+                >Perfect Plan</span
+              >
+            </h2>
+            <p class="max-w-2xl mx-auto text-lg text-gray-600">
+              Flexible pricing designed to scale with your business. Start small
+              and upgrade as you grow.
+            </p>
+
+            <!-- Toggle between monthly and annual billing -->
+            <div class="flex items-center justify-center mt-8">
+              <span class="mr-4 font-medium">Monthly</span>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="billing-toggle"
+                  class="sr-only peer"
+                  checked
+                />
+                <div
+                  class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-indigo-600"
+                ></div>
+                <span class="ml-4 font-medium"
+                  >Annual
+                  <span
+                    class="text-sm bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full"
+                    >Save 20%</span
+                  ></span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Starter Plan -->
+            <div
+              class="relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1"
+            >
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                <p class="text-gray-600 mb-6">
+                  Perfect for small businesses getting started with AI
+                </p>
+
+                <div class="mb-6">
+                  <span class="text-4xl font-bold" id="starter-price">$99</span>
+                  <span class="text-gray-500">/month</span>
+                </div>
+
+                <a
+                  href="#"
+                  class="block w-full px-6 py-3 text-center bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 transition-colors mb-8 transform hover:scale-105 transition duration-300"
+                >
+                  Get Started
+                </a>
+
+                <ul class="space-y-3">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Up to 10,000 AI requests/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Basic analytics dashboard</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Email support</span>
+                  </li>
+                  <li class="flex items-center text-gray-400">
+                    <i class="fas fa-times-circle mr-3"></i>
+                    <span>No priority support</span>
+                  </li>
+                  <li class="flex items-center text-gray-400">
+                    <i class="fas fa-times-circle mr-3"></i>
+                    <span>No custom models</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="absolute top-0 right-0 bg-indigo-100 text-indigo-600 px-4 py-1 text-sm font-medium rounded-bl-lg"
+              >
+                Popular
+              </div>
+            </div>
+
+            <!-- Professional Plan -->
+            <div
+              class="relative bg-white rounded-xl shadow-xl overflow-hidden border-2 border-indigo-500 transform scale-105 z-10 transition-all hover:shadow-2xl hover:-translate-y-1"
+            >
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                <p class="text-gray-600 mb-6">
+                  For growing businesses needing advanced AI capabilities
+                </p>
+
+                <div class="mb-6">
+                  <span class="text-4xl font-bold" id="professional-price"
+                    >$299</span
+                  >
+                  <span class="text-gray-500">/month</span>
+                </div>
+
+                <a
+                  href="#"
+                  class="block w-full px-6 py-3 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md hover:shadow-lg mb-8 transform hover:scale-105 transition duration-300"
+                >
+                  Get Started
+                </a>
+
+                <ul class="space-y-3">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Up to 50,000 AI requests/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Advanced analytics dashboard</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Priority email & chat support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Basic custom model support</span>
+                  </li>
+                  <li class="flex items-center text-gray-400">
+                    <i class="fas fa-times-circle mr-3"></i>
+                    <span>No dedicated account manager</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="absolute top-0 right-0 bg-indigo-500 text-white px-4 py-1 text-sm font-medium rounded-bl-lg"
+              >
+                Best Value
+              </div>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div
+              class="relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1"
+            >
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                <p class="text-gray-600 mb-6">
+                  For large organizations with custom AI needs
+                </p>
+
+                <div class="mb-6">
+                  <span class="text-4xl font-bold" id="enterprise-price"
+                    >Custom</span
+                  >
+                </div>
+
+                <a
+                  href="#contact"
+                  class="block w-full px-6 py-3 text-center bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 transition-colors mb-8 transform hover:scale-105 transition duration-300"
+                >
+                  Contact Sales
+                </a>
+
+                <ul class="space-y-3">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Unlimited AI requests</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Enterprise-grade analytics</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>24/7 priority support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Fully custom AI models</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span>Dedicated account manager</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div
-            class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden"
+            class="mt-12 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto"
           >
-            <!-- Contact Form -->
-            <div class="md:w-1/2 p-8 md:p-10">
-              <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+            <h3 class="text-xl font-bold mb-4 text-center">
+              Frequently Asked Questions
+            </h3>
 
-              <form id="contact-form" class="space-y-6">
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Full Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
-                  />
+            <div class="space-y-4">
+              <!-- FAQ Item 1 -->
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle flex items-center justify-between w-full text-left font-medium"
+                >
+                  <span>What counts as an "AI request"?</span>
+                  <i
+                    class="fas fa-chevron-down transition-transform duration-200"
+                  ></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  An AI request is any single interaction with our AI models.
+                  This includes API calls, predictions, analyses, or any other
+                  processing request. For example, analyzing a document counts
+                  as one request, generating a response to a customer query
+                  counts as one request, and processing an image for object
+                  detection counts as one request.
                 </div>
+              </div>
 
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Email Address</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
-                  />
+              <!-- FAQ Item 2 -->
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle flex items-center justify-between w-full text-left font-medium"
+                >
+                  <span>Can I switch plans later?</span>
+                  <i
+                    class="fas fa-chevron-down transition-transform duration-200"
+                  ></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  Yes, you can upgrade or downgrade your plan at any time. When
+                  upgrading, you'll immediately gain access to the higher plan's
+                  features and your billing will be prorated. When downgrading,
+                  the changes will take effect at the end of your current
+                  billing cycle.
                 </div>
+              </div>
 
-                <div>
-                  <label
-                    for="company"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Company (Optional)</label
-                  >
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
-                  />
+              <!-- FAQ Item 3 -->
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle flex items-center justify-between w-full text-left font-medium"
+                >
+                  <span>Is there a free trial available?</span>
+                  <i
+                    class="fas fa-chevron-down transition-transform duration-200"
+                  ></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  Yes! We offer a 14-day free trial of our Professional plan
+                  with no credit card required. You'll get full access to all
+                  Professional features during your trial period. After 14 days,
+                  you can choose to continue with any of our paid plans.
                 </div>
+              </div>
+            </div>
 
-                <div>
-                  <label
-                    for="interest"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >What are you interested in?</label
-                  >
-                  <select
-                    id="interest"
-                    name="interest"
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="demo">Product Demo</option>
-                    <option value="pricing">Pricing Information</option>
-                    <option value="enterprise">Enterprise Solution</option>
-                    <option value="partnership">
-                      Partnership Opportunity
-                    </option>
-                  </select>
-                </div>
+            <div class="mt-8 text-center">
+              <p class="text-gray-600">
+                Still have questions?
+                <a href="#contact" class="text-indigo-600 hover:underline"
+                  >Contact our team</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div>
-                  <label
-                    for="message"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Your Message</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
-                  ></textarea>
-                </div>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+              <span
+                class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full font-medium mb-4"
+              >
+                Get In Touch
+              </span>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+                Ready to
+                <span
+                  class="bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent"
+                  >Transform</span
+                >
+                Your Business?
+              </h2>
+              <p class="max-w-2xl mx-auto text-lg text-gray-600">
+                Our team is here to answer your questions and help you get
+                started with AI Nexus Pro.
+              </p>
+            </div>
 
-                <div class="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="consent"
-                    name="consent"
-                    required
-                    class="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
-                  />
-                  <label
-                    for="consent"
-                    class="ml-2 block text-sm text-gray-700"
-                  >
-                    I agree to the
-                    <a
-                      href="#"
-                      class="text-indigo-600 hover:underline"
-                      >privacy policy</a
+            <div
+              class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <!-- Contact Form -->
+              <div class="md:w-1/2 p-8 md:p-10">
+                <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+
+                <form id="contact-form" class="space-y-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Full Name</label
                     >
-                    and
-                    <a
-                      href="#"
-                      class="text-indigo-600 hover:underline"
-                      >terms of service</a
-                    >.
-                  </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="company"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Company (Optional)</label
+                    >
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="interest"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >What are you interested in?</label
+                    >
+                    <select
+                      id="interest"
+                      name="interest"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                    >
+                      <option value="">Select an option</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="demo">Product Demo</option>
+                      <option value="pricing">Pricing Information</option>
+                      <option value="enterprise">Enterprise Solution</option>
+                      <option value="partnership">
+                        Partnership Opportunity
+                      </option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Your Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                    ></textarea>
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      name="consent"
+                      required
+                      class="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
+                    />
+                    <label
+                      for="consent"
+                      class="ml-2 block text-sm text-gray-700"
+                    >
+                      I agree to the
+                      <a href="#" class="text-indigo-600 hover:underline"
+                        >privacy policy</a
+                      >
+                      and
+                      <a href="#" class="text-indigo-600 hover:underline"
+                        >terms of service</a
+                      >.
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="w-full px-6 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+
+              <!-- Contact Info -->
+              <div
+                class="md:w-1/2 bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 md:p-10 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+                  <div class="space-y-6">
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-bold">Our Office</h4>
+                        <p class="text-indigo-100">
+                          123 AI Boulevard<br />San Francisco, CA 94107
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-envelope text-xl"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-bold">Email Us</h4>
+                        <a
+                          href="mailto:hello@ainexuspro.com"
+                          class="text-indigo-100 hover:underline"
+                          >hello@ainexuspro.com</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-bold">Call Us</h4>
+                        <a
+                          href="tel:+18005551234"
+                          class="text-indigo-100 hover:underline"
+                          >+1 (800) 555-1234</a
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
+                <div class="mt-12">
+                  <h4 class="font-bold mb-4">Follow Us</h4>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                    >
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-gray-300 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+          >
+            <!-- Company Info -->
+            <div>
+              <div class="flex items-center space-x-2 mb-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl"
+                >
+                  AN
+                </div>
+                <span
+                  class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"
+                  >AI Nexus Pro</span
+                >
+              </div>
+              <p class="mb-4">
+                Revolutionizing businesses with cutting-edge AI solutions since
+                2020.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                >
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                >
+                  <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                >
+                  <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                >
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#features" class="hover:text-white transition-colors"
+                    >Features</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    class="hover:text-white transition-colors"
+                    >Testimonials</a
+                  >
+                </li>
+                <li>
+                  <a href="#pricing" class="hover:text-white transition-colors"
+                    >Pricing</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4">Resources</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Documentation</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >API Reference</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Community</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Status</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4">
+                Subscribe to Newsletter
+              </h3>
+              <p class="mb-4">
+                Get the latest news and updates about our products and services.
+              </p>
+              <form class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="px-4 py-3 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
+                />
                 <button
                   type="submit"
-                  class="w-full px-6 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+                  class="px-4 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-r-lg hover:from-indigo-600 hover:to-purple-700 transition-all transform hover:-translate-y-1 transition duration-300"
                 >
-                  Send Message
+                  <i class="fas fa-paper-plane"></i>
                 </button>
               </form>
             </div>
-
-            <!-- Contact Info -->
-            <div
-              class="md:w-1/2 bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 md:p-10 flex flex-col justify-between"
-            >
-              <div>
-                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-
-                <div class="space-y-6">
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <i class="fas fa-map-marker-alt text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="font-bold">Our Office</h4>
-                      <p class="text-indigo-100">
-                        123 AI Boulevard<br />San Francisco, CA 94107
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <i class="fas fa-envelope text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="font-bold">Email Us</h4>
-                      <a
-                        href="mailto:hello@ainexuspro.com"
-                        class="text-indigo-100 hover:underline"
-                        >hello@ainexuspro.com</a
-                      >
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <i class="fas fa-phone-alt text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="font-bold">Call Us</h4>
-                      <a
-                        href="tel:+18005551234"
-                        class="text-indigo-100 hover:underline"
-                        >+1 (800) 555-1234</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-12">
-                <h4 class="font-bold mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                  <a
-                    href="#"
-                    class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
-                  >
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="w-10 h-10 rounded-full bg-indigo-400 hover:bg-indigo-300 flex items-center justify-center text-white transition-colors transform hover:-translate-y-1 transition duration-300"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 pt-20 pb-10">
-      <div class="container mx-auto px-4">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
-        >
-          <!-- Company Info -->
-          <div>
-            <div class="flex items-center space-x-2 mb-4">
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl"
-              >
-                AN
-              </div>
-              <span
-                class="text-2xl font-heading font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"
-                >AI Nexus Pro</span
-              >
-            </div>
-            <p class="mb-4">
-              Revolutionizing businesses with cutting-edge AI solutions since
-              2020.
+          <div
+            class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+          >
+            <p class="text-gray-500 mb-4 md:mb-0">
+              © 2023 AI Nexus Pro. All rights reserved.
             </p>
-            <div class="flex space-x-4">
+
+            <div class="flex space-x-6">
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                class="text-gray-500 hover:text-gray-300 transition-colors"
+                >Privacy Policy</a
               >
-                <i class="fab fa-twitter text-xl"></i>
-              </a>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                class="text-gray-500 hover:text-gray-300 transition-colors"
+                >Terms of Service</a
               >
-                <i class="fab fa-linkedin-in text-xl"></i>
-              </a>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
+                class="text-gray-500 hover:text-gray-300 transition-colors"
+                >Cookies</a
               >
-                <i class="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 transition duration-300"
-              >
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
             </div>
           </div>
-
-          <!-- Quick Links -->
-          <div>
-            <h3 class="text-lg font-bold text-white mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-              <li>
-                <a href="#features" class="hover:text-white transition-colors"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  class="hover:text-white transition-colors"
-                  >Testimonials</a
-                >
-              </li>
-              <li>
-                <a href="#pricing" class="hover:text-white transition-colors"
-                  >Pricing</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="hover:text-white transition-colors"
-                  >Contact</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Blog</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Resources -->
-          <div>
-            <h3 class="text-lg font-bold text-white mb-4">Resources</h3>
-            <ul class="space-y-2">
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Documentation</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >API Reference</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Help Center</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Community</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Status</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Newsletter -->
-          <div>
-            <h3 class="text-lg font-bold text-white mb-4">
-              Subscribe to Newsletter
-            </h3>
-            <p class="mb-4">
-              Get the latest news and updates about our products and services.
-            </p>
-            <form class="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                class="px-4 py-3 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
-              />
-              <button
-                type="submit"
-                class="px-4 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-r-lg hover:from-indigo-600 hover:to-purple-700 transition-all transform hover:-translate-y-1 transition duration-300"
-              >
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
         </div>
+      </footer>
+      <!-- Back to Top Button -->
+      <button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-colors hidden"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
 
-        <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-gray-500 mb-4 md:mb-0">
-            © 2023 AI Nexus Pro. All rights reserved.
-          </p>
-
-          <div class="flex space-x-6">
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-300 transition-colors"
-              >Privacy Policy</a
-            >
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-300 transition-colors"
-              >Terms of Service</a
-            >
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-300 transition-colors"
-              >Cookies</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Back to Top Button -->
-    <button
-      id="back-to-top"
-      class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-colors hidden"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </button>
-  </div>
-  
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
